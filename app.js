@@ -26,7 +26,7 @@ db.once("open", () => {
 });
 
 
-const port = 3000
+
 
 app.use(methodOverride("_method"))
 app.use(bodyParser.urlencoded({extended: true}));
@@ -129,7 +129,7 @@ app.delete("/blogs/:id",function(req,res){
     })
     })
 
-
+    const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log(`Server has started at:${port}`)
