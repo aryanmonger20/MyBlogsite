@@ -42,13 +42,7 @@ var blogSchema =new mongoose.Schema({
 
 var Blog =mongoose.model("Blog",blogSchema)
 
-// Blog.create({
-//     title :"Cute Dog",
-//     image:"https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-//     body:"This is a super cute dog"
-// })
 
-//Routes
 
 app.get("/",function(req,res){
     res.redirect("/blogs")
