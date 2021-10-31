@@ -4,12 +4,27 @@ var bodyParser=require("body-parser")
 var methodOverride=require("method-override")
 var expressSanitizer = require('express-sanitizer');
 
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
 
 var app =express();
-mongoose.connect("mongodb://localhost:27017/blog_app", { useNewUrlParser: true,
-useUnifiedTopology: true,
-useCreateIndex: true,
-useFindAndModify: true})
+
+const dbUrl = process.env.DB_URL;
+
+mongoose.connect(dbUrl, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+});
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+    console.log("Database connected");
+});
+
 
 const port = 3000
 
