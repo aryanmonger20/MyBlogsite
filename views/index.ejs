@@ -6,19 +6,19 @@
         <div class="ui divided items">
             <% blogs.forEach(function(blog){ %>
                 <div class="item">
-                    <div class="image">       
+                    <div style="width: 36%;" class="image">       
                         <img src="<%= blog.image %>">
                     </div>
                     <div class="content">
-                        <a class="header" href="/blogs/<%=blog._id%>"><%=blog.title %></a>
+                        <a style="font-size: 26px;" class="header" href="/blogs/<%=blog._id%>"><%=blog.title %></a>
                         <div class="meta">
                             <span><%= blog.created.toDateString() %></span>
                         </div>
-                        <div class="description">
-                            <p><%- blog.body.substring(0, 100) %>...</p> 
+                        <div class="description" style="max-width: 960px;">
+                            <p style="font-size: 17px;"><%- blog.body.substring(0,200)%>...</p> 
                         </div>
                         <div class="extra">
-                            <a class="ui floated basic blue button" href="/blogs/<%=blog._id%>">
+                            <a class="ui floated  blue button" href="/blogs/<%=blog._id%>">
                                 Read More
                                 <i class="right chevron icon"></i>
                             </a>
