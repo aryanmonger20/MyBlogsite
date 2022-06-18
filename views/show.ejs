@@ -6,11 +6,11 @@
     <div class="ui huge header"><%= blog.title %> </div>
     <div class="ui top attached center aligned segment">
     <div class="item"> 
-        <img  style="width: 50% ;margin-bottom :2em;" class="ui centered rounded image" src ="<%= blog.image %> "></div>
+        <img  style="width: 50% ;margin-bottom :1em;" class="ui centered rounded image" src ="<%= blog.image %> "></div>
        <div class="content">
         <span><%= blog.created.toDateString() %> </span>
        </div>
-       <div style="font-size: 17px; align-items: center;margin: 2em;" class="description">
+       <div style="font-size: 17px; align-items: center;margin: 1em;" class="description">
         <p><%= blog.body %> </p> 
        </div>
        <a class="ui blue button" href="/blogs/<%= blog._id %>/edit">Edit</a>
